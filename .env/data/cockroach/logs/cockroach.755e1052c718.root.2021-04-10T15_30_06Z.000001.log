@@ -1,0 +1,219 @@
+I210410 15:30:06.719240 1 util/log/sync_buffer.go:195 ⋮ [config] file created at: 2021/04/10 15:30:06
+I210410 15:30:06.719262 1 util/log/sync_buffer.go:195 ⋮ [config] running on machine: ‹755e1052c718›
+I210410 15:30:06.719277 1 util/log/sync_buffer.go:195 ⋮ [config] binary: CockroachDB CCL v20.2.7 (x86_64-unknown-linux-gnu, built 2021/03/29 17:52:00, go1.13.14)
+I210410 15:30:06.719287 1 util/log/sync_buffer.go:195 ⋮ [config] arguments: ‹[/cockroach/cockroach start-single-node --http-port 26256 --insecure]›
+I210410 15:30:06.719302 1 util/log/sync_buffer.go:195 ⋮ [config] line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
+W210410 15:30:06.718948 1 cli/start.go:1143 ⋮ ALL SECURITY CONTROLS HAVE BEEN DISABLED!
+
+This mode is intended for non-production testing only.
+
+In this mode:
+- Your cluster is open to any client that can access ‹any of your IP addresses›.
+- Intruders with access to your machine or network can observe client-server traffic.
+- Intruders can log in without password and read or write any data in the cluster.
+- Intruders can consume all your server's resources and cause unavailability.
+I210410 15:30:06.719452 1 cli/start.go:1153 ⋮ To start a secure server without mandating TLS for clients,
+consider --accept-sql-without-tls instead. For other options, see:
+
+- ‹https://go.crdb.dev/issue-v/53404/v20.2›
+- https://www.cockroachlabs.com/docs/v20.2/secure-a-cluster.html
+I210410 15:30:06.720038 1 server/status/recorder.go:605 ⋮ ‹available memory from cgroups (8.0 EiB) is unsupported, using system memory 7.6 GiB instead:›
+W210410 15:30:06.720107 1 cli/start.go:987 ⋮ ‹Using the default setting for --cache (128 MiB).›
+‹  A significantly larger value is usually needed for good performance.›
+‹  If you have a dedicated server a reasonable setting is --cache=.25 (1.9 GiB).›
+I210410 15:30:06.720529 1 server/status/recorder.go:605 ⋮ ‹available memory from cgroups (8.0 EiB) is unsupported, using system memory 7.6 GiB instead:›
+I210410 15:30:06.720555 1 cli/start.go:1168 ⋮ ‹CockroachDB CCL v20.2.7 (x86_64-unknown-linux-gnu, built 2021/03/29 17:52:00, go1.13.14)›
+I210410 15:30:06.721734 1 server/status/recorder.go:605 ⋮ ‹available memory from cgroups (8.0 EiB) is unsupported, using system memory 7.6 GiB instead:›
+I210410 15:30:06.721762 1 server/config.go:428 ⋮ system total memory: ‹7.6 GiB›
+I210410 15:30:06.721786 1 server/config.go:430 ⋮ server configuration:
+‹max offset             500000000›
+‹cache size             128 MiB›
+‹SQL memory pool size   1.9 GiB›
+‹scan interval          10m0s›
+‹scan min idle time     10ms›
+‹scan max idle time     1s›
+‹event log enabled      true›
+I210410 15:30:06.721856 1 cli/start.go:965 ⋮ using local environment variables: ‹COCKROACH_CHANNEL=official-docker›
+I210410 15:30:06.721879 1 cli/start.go:972 ⋮ process identity: ‹uid 0 euid 0 gid 0 egid 0›
+I210410 15:30:06.780487 1 cli/start.go:511 ⋮ GEOS loaded from directory ‹/usr/local/lib/cockroach›
+I210410 15:30:06.780543 1 cli/start.go:516 ⋮ starting cockroach node
+I210410 15:30:10.066818 46 server/server.go:790 ⋮ [n?] monitoring forward clock jumps based on server.clock.forward_jump_check_enabled
+I210410 15:30:10.981991 46 server/config.go:619 ⋮ [n?] 1 storage engine‹› initialized
+I210410 15:30:10.982108 46 server/config.go:622 ⋮ [n?] ‹Pebble cache size: 128 MiB›
+I210410 15:30:10.982163 46 server/config.go:622 ⋮ [n?] ‹store 0: RocksDB, max size 0 B, max open file limit 1043576›
+W210410 15:30:11.075008 46 cli/start.go:911 ⋮ neither --listen-addr nor --advertise-addr was specified.
+The server will advertise ‹"755e1052c718"› to other nodes, is this routable?
+
+Consider using:
+- for local-only servers:  --listen-addr=localhost
+- for multi-node clusters: --advertise-addr=<host/IP addr>
+I210410 15:30:11.074984 165 server/server.go:1424 ⋮ [n?] connecting to gossip network to verify cluster ID ‹"dd9dc586-c756-4f4b-a9e5-9e23cf559418"›
+I210410 15:30:11.075350 46 gossip/gossip.go:403 ⋮ [n1] NodeDescriptor set to ‹node_id:1 address:<network_field:"tcp" address_field:"755e1052c718:26257" > attrs:<> locality:<> ServerVersion:<major_val:20 minor_val:2 patch:0 unstable:0 > build_tag:"v20.2.7" started_at:1618068611075336280 cluster_name:"" sql_address:<network_field:"tcp" address_field:"755e1052c718:26257" >›
+W210410 15:30:11.148645 238 kv/kvserver/replica_range_lease.go:556 ⋮ [n1,s1,r6/1:‹/Table/{SystemCon…-11}›] can't determine lease status of (n1,s1):1 due to node liveness error: node not in the liveness table
+(1) attached stack trace
+  -- stack trace:
+  | github.com/cockroachdb/cockroach/pkg/kv/kvserver.init
+  | 	/go/src/github.com/cockroachdb/cockroach/pkg/kv/kvserver/node_liveness.go:45
+  | runtime.doInit
+  | 	/usr/local/go/src/runtime/proc.go:5228
+  | runtime.doInit
+  | 	/usr/local/go/src/runtime/proc.go:5223
+  | runtime.doInit
+  | 	/usr/local/go/src/runtime/proc.go:5223
+  | runtime.doInit
+  | 	/usr/local/go/src/runtime/proc.go:5223
+  | runtime.doInit
+  | 	/usr/local/go/src/runtime/proc.go:5223
+  | runtime.main
+  | 	/usr/local/go/src/runtime/proc.go:190
+  | runtime.goexit
+  | 	/usr/local/go/src/runtime/asm_amd64.s:1357
+Wraps: (2) node not in the liveness table
+Error types: (1) *withstack.withStack (2) *errutil.leafError
+I210410 15:30:11.149450 165 server/server.go:1427 ⋮ [n1] node connected via gossip
+W210410 15:30:11.149321 238 kv/kvserver/store.go:1691 ⋮ [n1,s1,r6/1:‹/Table/{SystemCon…-11}›] could not gossip system config: ‹[NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown›
+(1) ‹[NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown›
+Error types: (1) *roachpb.NotLeaseHolderError
+I210410 15:30:11.153136 46 server/node.go:430 ⋮ [n1] initialized store [n1,s1]: disk (capacity=196 GiB, available=4.3 GiB, used=5.4 MiB, logicalBytes=28 MiB), ranges=57, leases=0, queries=0.00, writes=0.00, bytesPerReplica={p10=0.00 p25=0.00 p50=0.00 p75=333.00 p90=48762.00 pMax=29233678.00}, writesPerReplica={p10=0.00 p25=0.00 p50=0.00 p75=0.00 p90=0.00 pMax=0.00}
+I210410 15:30:11.153958 46 kv/kvserver/stores.go:236 ⋮ [n1] read 0 node addresses from persistent storage
+W210410 15:30:11.199974 238 kv/kvserver/store.go:1691 ⋮ [n1,s1,r6/1:‹/Table/{SystemCon…-11}›] could not gossip system config: ‹[NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown›
+(1) ‹[NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown›
+Error types: (1) *roachpb.NotLeaseHolderError
+W210410 15:30:11.285732 238 kv/kvserver/store.go:1691 ⋮ [n1,s1,r6/1:‹/Table/{SystemCon…-11}›] could not gossip system config: ‹[NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown›
+(1) ‹[NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown›
+Error types: (1) *roachpb.NotLeaseHolderError
+I210410 15:30:11.328499 46 server/node.go:489 ⋮ [n1] started with engine type ‹2›
+I210410 15:30:11.328688 46 server/node.go:491 ⋮ [n1] started with attributes ‹[]›
+I210410 15:30:11.328820 46 server/goroutinedumper/goroutinedumper.go:120 ⋮ [n1] writing goroutine dumps to ‹/cockroach/cockroach-data/logs/goroutine_dump›
+I210410 15:30:11.328883 46 server/heapprofiler/heapprofiler.go:49 ⋮ [n1] writing go heap profiles to ‹/cockroach/cockroach-data/logs/heap_profiler› at least every 1h0m0s
+I210410 15:30:11.328925 46 server/heapprofiler/cgoprofiler.go:53 ⋮ [n1] to enable jmalloc profiling: "export MALLOC_CONF=prof:true" or "ln -s prof:true /etc/malloc.conf"
+I210410 15:30:11.328943 46 server/heapprofiler/statsprofiler.go:54 ⋮ [n1] writing memory stats to ‹/cockroach/cockroach-data/logs/heap_profiler› at last every 1h0m0s
+I210410 15:30:11.328980 46 server/server.go:1544 ⋮ [n1] starting http server at ‹[::]:26256› (use: ‹755e1052c718:26256›)
+I210410 15:30:11.329039 46 server/server.go:1551 ⋮ [n1] starting grpc/postgres server at ‹[::]:26257›
+I210410 15:30:11.329078 46 server/server.go:1552 ⋮ [n1] advertising CockroachDB node at ‹755e1052c718:26257›
+I210410 15:30:12.707281 46 sql/sqlliveness/slinstance/slinstance.go:252 ⋮ [n1] starting SQL liveness instance
+I210410 15:30:12.707732 46 server/server_sql.go:800 ⋮ [n1] done ensuring all necessary migrations have run
+I210410 15:30:12.707773 46 server/server.go:1887 ⋮ [n1] serving sql connections
+I210410 15:30:12.707951 46 cli/start.go:677 ⋮ [config] clusterID: ‹dd9dc586-c756-4f4b-a9e5-9e23cf559418›
+I210410 15:30:12.708010 46 cli/start.go:687 ⋮ node startup completed:
+CockroachDB node starting at 2021-04-10 15:30:12.70784338 +0000 UTC (took 6.0s)
+build:               CCL v20.2.7 @ 2021/03/29 17:52:00 (go1.13.14)
+webui:               ‹http://755e1052c718:26256›
+sql:                 ‹postgresql://root@755e1052c718:26257?sslmode=disable›
+RPC client flags:    ‹/cockroach/cockroach <client cmd> --host=755e1052c718:26257 --insecure›
+logs:                ‹/cockroach/cockroach-data/logs›
+temp dir:            ‹/cockroach/cockroach-data/cockroach-temp434535716›
+external I/O path:   ‹/cockroach/cockroach-data/extern›
+store[0]:            ‹path=/cockroach/cockroach-data›
+storage engine:      pebble
+status:              restarted pre-existing node
+clusterID:           ‹dd9dc586-c756-4f4b-a9e5-9e23cf559418›
+nodeID:              1
+I210410 15:30:12.708310 368 jobs/job_scheduler.go:349 ⋮ [n1] waiting 2m0s before scheduled jobs daemon start
+I210410 15:30:12.708756 354 sql/temporary_schema.go:510 ⋮ [n1] running temporary object cleanup background job
+I210410 15:30:12.715260 369 server/server_update.go:55 ⋮ [n1] no need to upgrade, cluster already at the newest version
+I210410 15:30:12.999787 354 sql/temporary_schema.go:545 ⋮ [n1] found 0 temporary schemas
+I210410 15:30:12.999931 354 sql/temporary_schema.go:548 ⋮ [n1] early exiting temporary schema cleaner as no temporary schemas were found
+I210410 15:30:12.999975 354 sql/temporary_schema.go:549 ⋮ [n1] completed temporary object cleanup job
+I210410 15:30:13.000012 354 sql/temporary_schema.go:627 ⋮ [n1] temporary object cleaner next scheduled to run at 2021-04-10 16:00:12.708690339 +0000 UTC
+I210410 15:30:13.411261 304 sql/sqlliveness/slstorage/slstorage.go:348 ⋮ [n1] inserted sqlliveness session ‹4e7659bf8f354d0fb5ca41b4ffe3287b›
+I210410 15:30:13.411470 304 sql/sqlliveness/slinstance/slinstance.go:143 ⋮ [n1] created new SQL liveness session ‹4e7659bf8f354d0fb5ca41b4ffe3287b›
+I210410 15:30:13.455692 302 sql/event_log.go:162 ⋮ [n1] Event: ‹"node_restart"›, target: 1, info: ‹{Descriptor:{NodeID:1 Address:755e1052c718:26257 Attrs: Locality: ServerVersion:20.2 BuildTag:v20.2.7 StartedAt:1618068611075336280 LocalityAddress:[] ClusterName: SQLAddress:755e1052c718:26257} ClusterID:dd9dc586-c756-4f4b-a9e5-9e23cf559418 StartedAt:1618068611075336280 LastUp:1618068201901898150}›
+I210410 15:30:13.508564 168 gossip/gossip.go:1508 ⋮ [n1] node has connected to cluster via gossip
+I210410 15:30:13.599236 168 kv/kvserver/stores.go:255 ⋮ [n1] wrote 0 node addresses to persistent storage
+W210410 15:30:16.623602 224 kv/kvserver/store_raft.go:493 ⋮ [n1,s1,r1/1:‹/{Min-System/NodeL…}›] handle raft ready: 1.0s [applied=1, batches=1, state_assertions=0]
+W210410 15:30:16.857604 292 kv/kvserver/node_liveness.go:748 ⋮ [n1,liveness-hb] slow heartbeat took 1.028109653s; err=<nil>
+W210410 15:30:19.052164 61 kv/kvserver/store_raft.go:493 ⋮ [n1,s1,r4/1:‹/System{/tsd-tse}›] handle raft ready: 0.9s [applied=1, batches=1, state_assertions=0]
+W210410 15:30:19.240328 64 kv/kvserver/store_raft.go:493 ⋮ [n1,s1,r35/1:‹/Table/{39-53}›] handle raft ready: 0.8s [applied=1, batches=1, state_assertions=0]
+I210410 15:30:21.333199 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 143 MiB RSS, 205 goroutines, 25 MiB/32 MiB/42 MiB GO alloc/idle/total, 12 MiB/23 MiB CGO alloc/total, 0.0 CGO/sec, 0.0/0.0 %(u/s)time, 0.0 %gc (13x), 4.3 KiB/11 KiB (r/w)net
+W210410 15:30:25.043152 207 kv/kvserver/store_raft.go:493 ⋮ [n1,s1,r35/1:‹/Table/{39-53}›] handle raft ready: 0.6s [applied=1, batches=1, state_assertions=0]
+W210410 15:30:30.203064 203 kv/kvserver/store_raft.go:493 ⋮ [n1,s1,r15/1:‹/Table/{19-20}›] handle raft ready: 0.9s [applied=2, batches=1, state_assertions=0]
+W210410 15:30:30.552952 292 kv/kvserver/node_liveness.go:748 ⋮ [n1,liveness-hb] slow heartbeat took 1.223566091s; err=<nil>
+I210410 15:30:31.331515 173 kv/kvserver/store.go:2625 ⋮ [n1,s1] sstables (read amplification = 1):
+‹6 [ 1M 1 ]: 1M›
+I210410 15:30:31.331812 173 kv/kvserver/store.go:2626 ⋮ [n1,s1] ‹›
+‹__level_____count____size___score______in__ingest(sz_cnt)____move(sz_cnt)___write(sz_cnt)____read___r-amp___w-amp›
+‹    WAL         2   533 K       -   531 K       -       -       -       -   533 K       -       -       -     1.0›
+‹      0         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      1         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      2         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      3         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      4         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      5         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      6         1   1.2 M       -   118 K     0 B       0     0 B       0   1.2 M       1   1.3 M       1    10.3›
+‹  total         1   1.2 M       -   533 K     0 B       0     0 B       0   1.7 M       1   1.3 M       1     3.3›
+‹  flush         0›
+‹compact         1     0 B          (size == estimated-debt)›
+‹ memtbl         2   4.3 M›
+‹zmemtbl         0     0 B›
+‹   ztbl         0     0 B›
+‹ bcache        30   947 K   93.6%  (score == hit-rate)›
+‹ tcache         1   616 B   99.8%  (score == hit-rate)›
+‹ titers         0›
+‹ filter         -       -   79.4%  (score == utility)›
+I210410 15:30:31.331850 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 143 MiB RSS, 205 goroutines, 27 MiB/30 MiB/42 MiB GO alloc/idle/total, 13 MiB/23 MiB CGO alloc/total, 0.8 CGO/sec, 3.6/0.7 %(u/s)time, 0.0 %gc (1x), 4.6 KiB/22 KiB (r/w)net
+I210410 15:30:34.398911 303 sql/sqlliveness/slstorage/slstorage.go:326 ⋮ [n1] deleted 1 expired SQL liveness sessions
+W210410 15:30:37.119178 64 kv/kvserver/store_raft.go:493 ⋮ [n1,s1,r34/1:‹/Table/3{8-9}›] handle raft ready: 0.8s [applied=2, batches=1, state_assertions=0]
+I210410 15:30:41.331014 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 144 MiB RSS, 205 goroutines, 28 MiB/29 MiB/45 MiB GO alloc/idle/total, 13 MiB/23 MiB CGO alloc/total, 0.5 CGO/sec, 3.8/0.9 %(u/s)time, 0.0 %gc (1x), 4.7 KiB/21 KiB (r/w)net
+I210410 15:30:51.331022 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 146 MiB RSS, 206 goroutines, 26 MiB/31 MiB/46 MiB GO alloc/idle/total, 13 MiB/23 MiB CGO alloc/total, 12.1 CGO/sec, 3.7/0.6 %(u/s)time, 0.0 %gc (1x), 2.2 KiB/11 KiB (r/w)net
+W210410 15:30:53.503802 220 kv/kvserver/store_raft.go:493 ⋮ [n1,s1,r4/1:‹/System{/tsd-tse}›] handle raft ready: 0.8s [applied=1, batches=1, state_assertions=0]
+W210410 15:30:53.731985 226 kv/kvserver/store_raft.go:493 ⋮ [n1,s1,r3/1:‹/System/{NodeLive…-tsd}›] handle raft ready: 0.9s [applied=1, batches=1, state_assertions=0]
+I210410 15:31:01.333555 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 146 MiB RSS, 206 goroutines, 25 MiB/31 MiB/46 MiB GO alloc/idle/total, 13 MiB/23 MiB CGO alloc/total, 0.1 CGO/sec, 2.9/1.0 %(u/s)time, 0.0 %gc (1x), 4.2 KiB/21 KiB (r/w)net
+W210410 15:31:02.878949 223 kv/kvserver/store_raft.go:493 ⋮ [n1,s1,r24/1:‹/Table/2{8-9}›] handle raft ready: 0.5s [applied=2, batches=1, state_assertions=0]
+I210410 15:31:11.329027 174 gossip/gossip.go:568 ⋮ [n1] gossip status (ok, 1 node‹›)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+gossip connectivity
+  n1 [sentinel];
+I210410 15:31:11.333812 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 147 MiB RSS, 206 goroutines, 18 MiB/36 MiB/46 MiB GO alloc/idle/total, 13 MiB/23 MiB CGO alloc/total, 0.1 CGO/sec, 2.8/0.7 %(u/s)time, 0.0 %gc (1x), 273 B/0 B (r/w)net
+I210410 15:31:21.334010 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 147 MiB RSS, 205 goroutines, 21 MiB/33 MiB/46 MiB GO alloc/idle/total, 13 MiB/23 MiB CGO alloc/total, 0.1 CGO/sec, 4.1/1.2 %(u/s)time, 0.0 %gc (1x), 2.1 KiB/11 KiB (r/w)net
+I210410 15:31:31.331693 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 147 MiB RSS, 205 goroutines, 30 MiB/26 MiB/46 MiB GO alloc/idle/total, 13 MiB/23 MiB CGO alloc/total, 0.1 CGO/sec, 2.5/0.5 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+I210410 15:31:41.334809 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 149 MiB RSS, 205 goroutines, 24 MiB/32 MiB/49 MiB GO alloc/idle/total, 13 MiB/23 MiB CGO alloc/total, 0.1 CGO/sec, 2.9/0.8 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210410 15:31:46.833408 292 kv/kvserver/node_liveness.go:748 ⋮ [n1,liveness-hb] slow heartbeat took 1.003988161s; err=<nil>
+I210410 15:31:51.334402 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 149 MiB RSS, 206 goroutines, 20 MiB/35 MiB/49 MiB GO alloc/idle/total, 13 MiB/23 MiB CGO alloc/total, 0.1 CGO/sec, 2.7/0.6 %(u/s)time, 0.0 %gc (1x), 2.2 KiB/11 KiB (r/w)net
+I210410 15:32:01.335157 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 150 MiB RSS, 206 goroutines, 28 MiB/29 MiB/49 MiB GO alloc/idle/total, 13 MiB/23 MiB CGO alloc/total, 0.1 CGO/sec, 2.5/1.0 %(u/s)time, 0.0 %gc (0x), 42 B/0 B (r/w)net
+I210410 15:32:11.329075 174 gossip/gossip.go:568 ⋮ [n1] gossip status (ok, 1 node‹›)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I210410 15:32:11.334419 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 151 MiB RSS, 206 goroutines, 20 MiB/35 MiB/49 MiB GO alloc/idle/total, 13 MiB/23 MiB CGO alloc/total, 0.1 CGO/sec, 3.4/0.6 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+I210410 15:32:21.334956 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 151 MiB RSS, 205 goroutines, 31 MiB/26 MiB/49 MiB GO alloc/idle/total, 13 MiB/23 MiB CGO alloc/total, 0.1 CGO/sec, 3.1/0.8 %(u/s)time, 0.0 %gc (0x), 273 B/0 B (r/w)net
+I210410 15:32:31.333220 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 151 MiB RSS, 205 goroutines, 28 MiB/28 MiB/49 MiB GO alloc/idle/total, 13 MiB/23 MiB CGO alloc/total, 0.1 CGO/sec, 3.9/0.6 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210410 15:32:39.075426 224 kv/kvserver/store_raft.go:493 ⋮ [n1,s1,r7/1:‹/Table/1{1-2}›] handle raft ready: 0.5s [applied=1, batches=1, state_assertions=0]
+W210410 15:32:40.323935 217 kv/kvserver/store_raft.go:493 ⋮ [n1,s1,r7/1:‹/Table/1{1-2}›] handle raft ready: 0.5s [applied=2, batches=1, state_assertions=0]
+W210410 15:32:40.584767 192 kv/kvserver/store_raft.go:493 ⋮ [n1,s1,r1/1:‹/{Min-System/NodeL…}›] handle raft ready: 0.5s [applied=1, batches=1, state_assertions=0]
+W210410 15:32:41.200548 292 kv/kvserver/node_liveness.go:748 ⋮ [n1,liveness-hb] slow heartbeat took 1.371163122s; err=<nil>
+I210410 15:32:41.333116 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 152 MiB RSS, 205 goroutines, 21 MiB/34 MiB/49 MiB GO alloc/idle/total, 21 MiB/31 MiB CGO alloc/total, 0.2 CGO/sec, 3.4/0.9 %(u/s)time, 0.0 %gc (1x), 2.0 KiB/11 KiB (r/w)net
+W210410 15:32:43.745054 226 kv/kvserver/store_raft.go:493 ⋮ [n1,s1,r4/1:‹/System{/tsd-tse}›] handle raft ready: 1.0s [applied=1, batches=1, state_assertions=0]
+I210410 15:32:51.333889 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 153 MiB RSS, 206 goroutines, 30 MiB/27 MiB/49 MiB GO alloc/idle/total, 21 MiB/31 MiB CGO alloc/total, 0.1 CGO/sec, 2.5/1.0 %(u/s)time, 0.0 %gc (0x), 126 B/0 B (r/w)net
+I210410 15:33:01.335599 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 153 MiB RSS, 206 goroutines, 23 MiB/32 MiB/49 MiB GO alloc/idle/total, 21 MiB/31 MiB CGO alloc/total, 0.1 CGO/sec, 3.2/0.7 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+I210410 15:33:11.328857 174 gossip/gossip.go:568 ⋮ [n1] gossip status (ok, 1 node‹›)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I210410 15:33:11.333395 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 153 MiB RSS, 206 goroutines, 32 MiB/25 MiB/49 MiB GO alloc/idle/total, 21 MiB/31 MiB CGO alloc/total, 0.1 CGO/sec, 2.9/0.6 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+I210410 15:33:21.335790 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 153 MiB RSS, 205 goroutines, 26 MiB/30 MiB/49 MiB GO alloc/idle/total, 21 MiB/31 MiB CGO alloc/total, 0.1 CGO/sec, 3.2/1.0 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+I210410 15:33:31.335498 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 153 MiB RSS, 205 goroutines, 19 MiB/35 MiB/48 MiB GO alloc/idle/total, 21 MiB/31 MiB CGO alloc/total, 0.1 CGO/sec, 3.4/0.7 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+I210410 15:33:41.337435 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 154 MiB RSS, 205 goroutines, 27 MiB/29 MiB/48 MiB GO alloc/idle/total, 21 MiB/31 MiB CGO alloc/total, 0.1 CGO/sec, 2.5/0.9 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+I210410 15:33:51.336241 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 154 MiB RSS, 206 goroutines, 25 MiB/31 MiB/48 MiB GO alloc/idle/total, 21 MiB/31 MiB CGO alloc/total, 0.1 CGO/sec, 3.4/0.5 %(u/s)time, 0.0 %gc (1x), 2.2 KiB/11 KiB (r/w)net
+I210410 15:34:01.336628 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 154 MiB RSS, 206 goroutines, 34 MiB/24 MiB/48 MiB GO alloc/idle/total, 21 MiB/31 MiB CGO alloc/total, 0.1 CGO/sec, 1.9/1.4 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+I210410 15:34:11.328924 174 gossip/gossip.go:568 ⋮ [n1] gossip status (ok, 1 node‹›)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I210410 15:34:11.336413 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 155 MiB RSS, 208 goroutines, 27 MiB/29 MiB/49 MiB GO alloc/idle/total, 21 MiB/31 MiB CGO alloc/total, 0.1 CGO/sec, 3.1/0.7 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+I210410 15:34:21.337323 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 155 MiB RSS, 205 goroutines, 20 MiB/34 MiB/48 MiB GO alloc/idle/total, 21 MiB/31 MiB CGO alloc/total, 0.1 CGO/sec, 3.4/0.8 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+I210410 15:34:31.337006 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 155 MiB RSS, 205 goroutines, 29 MiB/28 MiB/48 MiB GO alloc/idle/total, 21 MiB/31 MiB CGO alloc/total, 0.1 CGO/sec, 2.9/0.6 %(u/s)time, 0.0 %gc (0x), 203 B/0 B (r/w)net
+I210410 15:34:41.337477 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 156 MiB RSS, 205 goroutines, 22 MiB/33 MiB/48 MiB GO alloc/idle/total, 21 MiB/31 MiB CGO alloc/total, 0.1 CGO/sec, 2.8/1.0 %(u/s)time, 0.0 %gc (1x), 70 B/0 B (r/w)net
+W210410 15:34:46.963693 292 kv/kvserver/node_liveness.go:748 ⋮ [n1,liveness-hb] slow heartbeat took 1.134364441s; err=<nil>
+I210410 15:34:51.336019 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 156 MiB RSS, 206 goroutines, 34 MiB/23 MiB/49 MiB GO alloc/idle/total, 21 MiB/31 MiB CGO alloc/total, 0.1 CGO/sec, 3.0/0.7 %(u/s)time, 0.0 %gc (0x), 2.1 KiB/11 KiB (r/w)net
+I210410 15:34:59.290411 1 cli/start.go:736 ⋮ received signal 'terminated'
+I210410 15:34:59.290499 1 cli/start.go:821 ⋮ initiating graceful shutdown of server
+I210410 15:35:00.172723 4159 server/drain.go:174 ⋮ [server drain process] drain remaining: 3
+I210410 15:35:00.172936 4159 server/drain.go:176 ⋮ [server drain process] drain details: descriptor leases: 1, liveness record: 2
+I210410 15:35:01.337791 290 server/status/runtime.go:525 ⋮ [n1] runtime stats: 157 MiB RSS, 210 goroutines, 28 MiB/28 MiB/49 MiB GO alloc/idle/total, 21 MiB/31 MiB CGO alloc/total, 0.1 CGO/sec, 2.9/1.2 %(u/s)time, 0.0 %gc (1x), 126 B/0 B (r/w)net
+W210410 15:35:01.429363 183 kv/kvserver/store_raft.go:493 ⋮ [n1,s1,r2/1:‹/System/NodeLiveness{-Max}›] handle raft ready: 0.9s [applied=1, batches=1, state_assertions=0]
+W210410 15:35:01.735648 4272 kv/kvserver/node_liveness.go:748 ⋮ [n1,s1,r66/1:‹/Table/6{2-3}›] slow heartbeat took 1.488346457s; err=<nil>
+I210410 15:35:02.181714 4159 server/drain.go:174 ⋮ [server drain process] drain remaining: 0
+I210410 15:35:02.181881 4159 util/stop/stopper.go:563 ⋮ [server drain process] quiescing
+W210410 15:35:02.181998 304 sql/sqlliveness/slinstance/slinstance.go:182 ⋮ [n1] exiting heartbeat loop
+W210410 15:35:02.182087 363 jobs/registry.go:675 ⋮ canceling all adopted jobs due to stopper quiescing
+I210410 15:35:02.181987 4110 kv/kvserver/queue.go:1187 ⋮ [n1,replicate] purgatory is now empty
+I210410 15:35:02.274580 1 cli/start.go:873 ⋮ server drained and shutdown completed
